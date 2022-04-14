@@ -1,1 +1,43 @@
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href = "home.css">
+  </head>
+  <body>
+    <div id="header1">
+      <h2>Login App</h2>
+      <h2 id="name"}>Hello</h2>
+      <button id ="logoutBtn">Exit</button>
+    </div>
+    <div id="container">
+      <div id = "leftSide">
+        <% for(var i=0;i<data.length;i++){ %>
+          <div class = "listobj" style="height:50px; width:90%;  margin-left:8px;">
+            <form method="post" class="editForm" action="/editTodos" style="width:100%; margin:0; padding:0;" style="align-self: center;">
+              <% var str = data[i].text  %>
+               
+              
+              <p style = "display:block; align-self: center; margin:0"><%= str %></p>
+            <% console.log(str); %>
+              <input name="toedit" type="text" style="height:70%; width:60%; display: none; align-self: center; margin:0; margin-left:8px;"  placeholder="Edit your task" />
+              <input class="listBtn" type ="submit" style = "display:none; align-self: center;" id="editBtn" value="Edit"/>
+               <input name="original" type = "text" style="display: none;" value= <%- data[i]._id %> />
+            </form>
+            <form method="post"  action="/deleteTodos" style="margin:0; padding:0;">
+            <input name="todelete" style="display: none;" value= <%- data[i]._id %> />
+              <input class="listBtn" type ="submit" style = "display:block; align-self: center;" id="deleteBtn" value="Delete"/>
+            </form>
+          </div>
+        <% } %>
+      </div>
+      <div id = "rightSide">
+        <form id="postForm" method="post"  action="/todo" style="width:95%">
+          <input name="todo" style="height:70%; width:100%; " placeholder="Add your task"/>
+          <input class = "todoSubmitBtn" type ="submit" id="saveBtn" value="Save"/>
+        </form>
+      </div>
+    </div>
 
+  </body>
+  <script src="/script/home.js"></script>
+</html>
