@@ -40,6 +40,15 @@ body{
     justify-content: center;
     
   }
+  #name{
+    height:30px;
+    border: solid grey 1px;
+    border-top: 0px;
+    width:95%;
+    align-self: center;
+    border-left: 0px;
+    border-right: 0px;
+  }
   #emailId{
     height:30px;
     border: solid grey 1px;
@@ -71,6 +80,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     width: 80%;
     height: 30px;
+    margin-bottom: 15px;
     align-self: center;
     margin-top: 20px;
     font-weight: 700;
@@ -92,7 +102,7 @@ body{
     background-color: black;
     border-radius: 15px;
     transition: 0.2s;
-    margin-bottom: 10px;
+    
   }
   #signInBtn:hover{
     background-color: grey;
